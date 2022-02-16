@@ -2,9 +2,11 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-One to two paragraph statement about your product and what it does.
+
 
 ![](header.png)
+
+Flutter powerful state management with bloc pattern.
 > Overview.
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
