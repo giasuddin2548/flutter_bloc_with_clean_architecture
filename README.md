@@ -11,15 +11,13 @@ One to two paragraph statement about your product and what it does.
 
 ## Installation
 
-<p align="center">
-  <img src="./img/example.png" alt="Size Limit CLI" width="738">
-</p>
+
 
 With **[GitHub action]** Size Limit will post bundle size changes as a comment
 in pull request discussion.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/andresz1/size-limit-action/master/assets/pr.png"
+<img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
   alt="Size Limit comment in pull request about bundle size changes"
   width="686" height="289">
 </p>
