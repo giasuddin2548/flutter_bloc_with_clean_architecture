@@ -1,5 +1,10 @@
 # Flutter Bloc Pattern with clean architecture
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
+One to two paragraph statement about your product and what it does.
+
+![](header.png)
 > Overview.
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
@@ -22,15 +27,6 @@ This design pattern helps to separate presentation from business logic. Followin
 </p>
 
 
-
-
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
-One to two paragraph statement about your product and what it does.
-
-![](header.png)
 
 ## Installation
 
