@@ -1,4 +1,17 @@
-# Product Name
+# Flutter Bloc Pattern with clean architecture
+<p align="center">
+<img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
+  alt="Size Limit comment in pull request about bundle size changes"
+  width="686" height="289">
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/cubit_architecture_full.png"
+  alt="Size Limit comment in pull request about bundle size changes"
+  width="686" height="289">
+</p>
+
+
 > Short blurb about what your product does.
 
 [![NPM Version][npm-image]][npm-url]
