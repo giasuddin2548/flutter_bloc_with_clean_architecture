@@ -19,14 +19,14 @@ This design pattern helps to separate presentation from business logic. Followin
 
 ## It Has three layer
 
-* ###Presentation Layer
+* ### Presentation Layer
   * Screens
   * Pages
   * Widgets
-* ###Business Logic Layer
+* ### Business Logic Layer
   * Blocs
   * Cubits
-* ###Data Layer
+* ### Data Layer
   * Repositories
   * Data Providers
   * Models
