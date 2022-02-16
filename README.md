@@ -1,4 +1,10 @@
 # Flutter Bloc Pattern with clean architecture
+
+> Overview.
+
+The goal of this package is to make it easy to implement the BLoC Design Pattern (Business Logic Component).
+
+This design pattern helps to separate presentation from business logic. Following the BLoC pattern facilitates testability and reusability. This package abstracts reactive aspects of the pattern allowing developers to focus on writing the business logic.
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
   alt="Size Limit comment in pull request about bundle size changes"
@@ -12,7 +18,7 @@
 </p>
 
 
-> Short blurb about what your product does.
+
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
