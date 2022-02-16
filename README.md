@@ -23,10 +23,10 @@ This design pattern helps to separate presentation from business logic. Followin
   * Screens
   * Pages
   * Widgets
-###* Business Logic Layer
+* ### Business Logic Layer
   * Blocs
   * Cubits
-###* Data Layer
+* Data Layer
   * Repositories
   * Data Providers
   * Models
