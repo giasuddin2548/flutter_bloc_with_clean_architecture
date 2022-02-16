@@ -1,24 +1,27 @@
-
 class CategoryModel {
   CategoryModel({
-      this.id, 
-      this.categoryName, 
-      this.image,});
+      this.brandId, 
+      this.brandName, 
+      this.brandImage, 
+      this.totalMobile,});
 
   CategoryModel.fromJson(dynamic json) {
-    id = json['id'];
-    categoryName = json['category_name'];
-    image = json['image'];
+    brandId = json['brand_id'];
+    brandName = json['brand_name'];
+    brandImage = json['brand_image'];
+    totalMobile = json['total_mobile'];
   }
-  int? id;
-  String? categoryName;
-  String? image;
+  String? brandId;
+  String? brandName;
+  String? brandImage;
+  String? totalMobile;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['id'] = id;
-    map['category_name'] = categoryName;
-    map['image'] = image;
+    map['brand_id'] = brandId;
+    map['brand_name'] = brandName;
+    map['brand_image'] = brandImage;
+    map['total_mobile'] = totalMobile;
     return map;
   }
 

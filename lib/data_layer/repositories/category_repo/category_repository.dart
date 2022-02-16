@@ -12,7 +12,7 @@ class CategoryRepository{
    Future<List<CategoryModel>> getCategoryData()async{
      print('Samir_checker::$runtimeType Method: getCategoryData');
     var receivedData=await categoryProvider.getCategoryData();
-    var tempList=receivedData.data['data'] as List;
+    var tempList=receivedData.data['brand_list'] as List;
     List<CategoryModel> list=tempList.map((e) => CategoryModel.fromJson(e)).toList();
     return list;
   }

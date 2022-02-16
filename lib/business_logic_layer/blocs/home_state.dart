@@ -1,20 +1,28 @@
 part of 'home_bloc.dart';
 
-class HomeState extends Equatable {
+abstract class HomeState extends Equatable {
+}
+class HomeInitialState extends HomeState{
+  @override
+  List<Object?> get props => [];
+
+}
+
+class LoadedState extends HomeState{
 
   List<CategoryModel> categoryList=[];
 
-  HomeState(this.categoryList);
+  LoadedState(this.categoryList);
 
 
-  HomeState copyWith({List<CategoryModel>? list}){
-    return HomeState(
+  LoadedState copyWith({List<CategoryModel>? list}){
+    return LoadedState(
       categoryList=list ?? [],
     );
   }
 
-  HomeState clear(){
-    return HomeState(
+  LoadedState clear(){
+    return LoadedState(
       categoryList=[],
     );
   }
@@ -23,11 +31,14 @@ class HomeState extends Equatable {
 
   List<Object?> get props => [];
 
+
 }
 
-class LoadingStatus extends HomeState{
+class LoadingState extends HomeState{
+  LoadingState();
+  @override
 
-  LoadingStatus(List<CategoryModel> categoryList) : super(categoryList);
+  List<Object?> get props => [];
 
 }
 
