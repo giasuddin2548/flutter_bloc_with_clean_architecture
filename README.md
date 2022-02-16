@@ -114,7 +114,7 @@ npm test
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Your Name – [@Gias Uddin Samir](https://twitter.com/giasuddin2548) – giasuddin2548@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
@@ -122,7 +122,7 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/giasuddin2548/flutter_bloc_with_clean_architecture/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
