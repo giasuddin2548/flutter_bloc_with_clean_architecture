@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           }
         },
          child: Scaffold(
-           appBar: AppBar(title: Text('Flutter Bloc') ,),
+           appBar: AppBar(title: const Text('Flutter Bloc') ,),
            body: BlocBuilder<HomeBloc, HomeState>(
 
              builder: (context, state) {

@@ -7,8 +7,15 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'business_logic_layer/blocs/home_bloc.dart';
-void main() {
-  runApp(const MyApp());
+import 'business_logic_layer/simple_bloc_observer.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  BlocOverrides.runZoned(() {
+          runApp(const MyApp());
+          },
+    blocObserver: SimpleBlocObserver(),
+  );
 }
 
 class MyApp extends StatelessWidget {

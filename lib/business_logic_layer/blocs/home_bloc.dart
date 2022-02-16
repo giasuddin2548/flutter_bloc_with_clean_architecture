@@ -31,7 +31,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Future<void> _getHomeCategoryData(GetCategoryDataEvent event, Emitter<HomeState> emit) async{
 
     emit(LoadingState());
-    print('Samir_checker::$runtimeType Method: _getHomeCategoryData');
+    // print('Samir_checker::$runtimeType Method: _getHomeCategoryData');
     List<CategoryModel> list=[];
    await categoryRepository.getCategoryData().then((value) {
       list=value;
