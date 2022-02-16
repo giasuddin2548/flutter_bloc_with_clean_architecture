@@ -17,8 +17,8 @@ The goal of this package is to make it easy to implement the BLoC Design Pattern
 This design pattern helps to separate presentation from business logic. Following the BLoC pattern facilitates testability and reusability. This package abstracts reactive aspects of the pattern allowing developers to focus on writing the business logic.
 
 
-## It Has three layer
-
+## Layers
+> Bloc has three layers.
 * ### Presentation Layer
   * Screens
   * Pages
@@ -114,7 +114,7 @@ npm test
 
 ## Meta
 
-Your Name – [@Gias Uddin Samir](https://twitter.com/giasuddin2548) – giasuddin2548@gmail.com
+– [@Gias Uddin Samir](https://twitter.com/giasuddin2548) – giasuddin2548@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
