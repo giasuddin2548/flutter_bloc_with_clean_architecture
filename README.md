@@ -10,6 +10,11 @@ The goal of this package is to make it easy to implement the BLoC Design Pattern
 This design pattern helps to separate presentation from business logic. Following the BLoC pattern facilitates testability and reusability. This package abstracts reactive aspects of the pattern allowing developers to focus on writing the business logic.
 
 
+
+
+
+
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/cubit_architecture_full.png"
   alt="Size Limit comment in pull request about bundle size changes"
