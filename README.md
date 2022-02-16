@@ -19,6 +19,20 @@ This design pattern helps to separate presentation from business logic. Followin
 
 ## It Has three layer
 
+* Presentation Layer
+  * Screens
+  * Pages
+  * Widgets
+* Business Logic Layer
+  * Blocs
+  * Cubits
+* Data Layer
+  * Repositories
+  * Data Providers
+  * Models
+  
+  
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/cubit_architecture_full.png"
   alt="Size Limit comment in pull request about bundle size changes"
