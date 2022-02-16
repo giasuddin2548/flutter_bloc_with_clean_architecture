@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/cubit_architecture_full.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="600" height="200">
   </a>
 
 <h3 align="center">Best-README-Template</h3>
