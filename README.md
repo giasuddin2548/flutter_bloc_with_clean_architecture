@@ -30,55 +30,9 @@ This design pattern helps to separate presentation from business logic. Followin
   * Repositories
   * Data Providers
   * Models
-  
-  
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/cubit_architecture_full.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="686" height="289">
-</p>
 
 
 
-## Installation
-
-
-
-With **[GitHub action]** Size Limit will post bundle size changes as a comment
-in pull request discussion.
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/felangel/bloc/master/docs/assets/flutter_bloc_logo_full.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="686" height="289">
-</p>
-
-With `--why`, Size Limit can tell you *why* your library is of this size
-and show the real cost of all your internal dependencies.
-We are using [Statoscope] for this analysis.
-
-<p align="center">
-  <img src="./img/why.png" alt="Statoscope example" width="650">
-</p>
-
-<p align="center">
-  <a href="https://evilmartians.com/?utm_source=size-limit">
-    <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg"
-         alt="Sponsored by Evil Martians" width="236" height="54">
-  </a>
-</p>
-
-
-
-
-## Meta
-
-– [@Gias Uddin Samir](https://twitter.com/giasuddin2548) – giasuddin2548@gmail.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/giasuddin2548/](https://github.com/giasuddin2548/)
 
 ## Contributing
 
