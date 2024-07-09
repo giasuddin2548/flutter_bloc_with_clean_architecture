@@ -3,19 +3,24 @@ import '../repositories/abstract_post_repository.dart';
 
 class PostUseCase {
     final AbstractPostRepository abstractPostRepository;
-
     PostUseCase(this.abstractPostRepository);
-
     Future<List<PostModel>> getPostList() async {
-
-        List<PostModel> posts = await abstractPostRepository.getPostList();
-        posts.sort((a, b) => (a.title??'').compareTo(b.title??''));
-
-
-        return posts;
+        try {
+            List<PostModel> posts = await abstractPostRepository.getPostList();
+            posts.sort((a, b) => (a.title ?? '').compareTo(b.title ?? ''));
+            return posts;
+        } catch (e) {
+            // Handle errors accordingly
+            rethrow;
+        }
     }
 
     Future<PostModel> getPostByID(String id) async {
-        return await abstractPostRepository.getPostByID(id);
+        try {
+            return await abstractPostRepository.getPostByID(id);
+        } catch (e) {
+            // Handle errors accordingly
+            rethrow;
+        }
     }
 }

@@ -6,8 +6,16 @@ import 'package:flutter_clean_arch/utils/my_dependancy.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await init();
+  await _initApp();
   runApp(const MyApp());
+}
+
+Future<void> _initApp() async {
+  try {
+    await init();
+  } catch (e) {
+    print('Initialization failed: $e');
+  }
 }
 
 class MyApp extends StatelessWidget {

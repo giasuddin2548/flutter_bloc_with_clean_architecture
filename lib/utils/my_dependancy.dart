@@ -11,15 +11,16 @@ import '../presentation/manager/home/home_bloc.dart';
 
 final sl = GetIt.instance;
 Future<void> init() async {
-  sl.registerSingleton<Dio>(Dio());
-  sl.registerSingleton<DioInterceptor>(DioInterceptor());
-  sl.registerSingleton<DioService>(DioService(dioInterceptor: sl<DioInterceptor>(), dio: sl()));
-  sl.registerSingleton<NetworkApiImpl>(NetworkApiImpl(sl<DioService>()));
-  sl.registerSingleton<AbstractNetworkApi>(NetworkApiImpl(sl<DioService>()));
-
-  sl.registerSingleton<PostRepoImpl>(PostRepoImpl(sl<AbstractNetworkApi>()));
-  sl.registerSingleton<AbstractPostRepository>(sl<PostRepoImpl>());
-  sl.registerSingleton<PostUseCase>(PostUseCase(sl<AbstractPostRepository>()));
-  sl.registerSingleton<HomeBloc>(HomeBloc(sl<PostUseCase>()));
-  ///sl.registerSingleton<HomeBloc>(HomeBloc(sl<GetPostListUseCase>(), sl<GetPostByIDUseCase>())); for multiple parameters
+  try {
+    sl.registerSingleton<DioInterceptor>(DioInterceptor());
+    sl.registerSingleton<DioService>(DioService(dioInterceptor: sl<DioInterceptor>(), dio: Dio()));
+    sl.registerSingleton<NetworkApiImpl>(NetworkApiImpl(sl<DioService>()));
+    sl.registerSingleton<AbstractNetworkApi>(NetworkApiImpl(sl<DioService>()));
+    sl.registerSingleton<PostRepoImpl>(PostRepoImpl(sl<AbstractNetworkApi>()));
+    sl.registerSingleton<AbstractPostRepository>(sl<PostRepoImpl>());
+    sl.registerSingleton<PostUseCase>(PostUseCase(sl<AbstractPostRepository>()));
+    sl.registerSingleton<HomeBloc>(HomeBloc(sl<PostUseCase>()));
+  } catch (e) {
+    print('Dependency registration failed: $e');
+  }
 }
