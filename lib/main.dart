@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_arch/presentation/manager/home/home_bloc.dart';
 import 'package:flutter_clean_arch/presentation/pages/home_page.dart';
+import 'package:flutter_clean_arch/utils/app_bloc_observer.dart';
 import 'package:flutter_clean_arch/utils/my_dependancy.dart';
 
 void main() async {
@@ -13,6 +14,7 @@ void main() async {
 Future<void> _initApp() async {
   try {
     await init();
+    Bloc.observer = AppBlocObserver();
   } catch (e) {
     print('Initialization failed: $e');
   }
