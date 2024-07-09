@@ -1,0 +1,92 @@
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(providers: [
+      BlocProvider<HomeBloc>(create: (_)=>sl()),
+    ], child: MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+        useMaterial3: true,
+      ),
+      home: HomePage(),
+    ));
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => HomeBloc(sl())..add(InitHomeEvent("Hi, I'm from Home Page")),
+      child: Scaffold(
+        body: _buildPage(context),
+      ),
+    );
+  }
+
+  Widget _buildPage(BuildContext context) {
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        if (state is HomeLoadedState) {
+          return Center(child: Text(state.name));
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
+    );
+  }
+}
+
+
+class HomeBloc extends Bloc<HomeEvent, HomeState> {
+  PostUseCase postUseCase;
+  HomeBloc(this.postUseCase) : super(HomeInitialState()) {
+    on<InitHomeEvent>((event, emit)async {
+      await _homePageData(event, emit);
+    });
+  }
+
+ Future<void> _homePageData(InitHomeEvent event, Emitter<HomeState> emit)async {
+    emit(HomeLoadingState());
+    await Future.delayed(const Duration(seconds: 5));
+    emit(HomeLoadedState(event.requestData));
+
+ }
+}
+
+
+class PostUseCase{
+    AbstractPostRepository abstractPostRepository;
+    PostUseCase(this.abstractPostRepository);
+
+    Future<List<PostModel>> getPostList()async{
+        return await abstractPostRepository.getPostList();
+    }
+    Future<PostModel> getPostByID(String id)async{
+        return await abstractPostRepository.getPostByID(id);
+    }
+
+
+}
+
+final sl = GetIt.instance;
+
+void init()async{
+
+  sl.registerSingleton<Dio>(Dio());
+  sl.registerSingleton<PostRepoImpl>(PostRepoImpl(sl()));
+  sl.registerSingleton<AbstractPostRepository>(PostRepoImpl(sl()));
+  sl.registerSingleton<PostUseCase>(PostUseCase(sl()));
+  sl.registerSingleton<HomeBloc>(sl());
+
+}
+
+fix the issue
