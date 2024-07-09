@@ -13,8 +13,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<InitHomeEvent>((event, emit) async {
       await _getPostData(event, emit);
     });
+    on<RefreshHomeEvent>((event, emit) async {
+      await refreshData(event, emit);
+    });
   }
   Future<void> _getPostData(InitHomeEvent event, Emitter<HomeState> emit) async {
+    print("_getPostData called");
+    emit(HomeLoadingState());
+    var data=await postUseCase.getPostList();
+    emit(HomeLoadedState(data));
+  }
+
+  Future<void> refreshData(RefreshHomeEvent event, Emitter<HomeState> emit) async {
+    print("refreshData called");
     emit(HomeLoadingState());
     var data=await postUseCase.getPostList();
     emit(HomeLoadedState(data));

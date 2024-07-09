@@ -14,3 +14,8 @@ class InitHomeEvent extends HomeEvent{
 
 }
 
+class RefreshHomeEvent extends HomeEvent{
+  @override
+  List<Object?> get props => [];
+
+}

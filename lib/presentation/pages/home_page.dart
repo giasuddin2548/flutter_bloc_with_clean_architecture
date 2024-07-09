@@ -8,6 +8,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildPage(context),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        sl<HomeBloc>().add(RefreshHomeEvent());
+      }, child: Icon(Icons.refresh),),
     );
   }
 
