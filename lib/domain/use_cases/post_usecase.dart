@@ -1,6 +1,4 @@
-
 import 'package:flutter_clean_arch/data/remote/models/PostModel.dart';
-
 import '../repositories/abstract_post_repository.dart';
 
 class PostUseCase {
@@ -9,7 +7,12 @@ class PostUseCase {
     PostUseCase(this.abstractPostRepository);
 
     Future<List<PostModel>> getPostList() async {
-        return await abstractPostRepository.getPostList();
+
+        List<PostModel> posts = await abstractPostRepository.getPostList();
+        posts.sort((a, b) => (a.title??'').compareTo(b.title??''));
+
+
+        return posts;
     }
 
     Future<PostModel> getPostByID(String id) async {

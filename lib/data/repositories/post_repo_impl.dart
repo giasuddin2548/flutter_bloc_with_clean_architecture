@@ -1,10 +1,10 @@
-
-import 'package:dio/dio.dart';
 import 'package:flutter_clean_arch/data/remote/models/PostModel.dart';
 import 'package:flutter_clean_arch/domain/repositories/abstract_post_repository.dart';
 
+import '../remote/data_sources/dio_service.dart';
+
 class PostRepoImpl extends AbstractPostRepository{
-  Dio dio;
+  DioService dio;
   PostRepoImpl(this.dio);
 
   @override
@@ -15,7 +15,7 @@ class PostRepoImpl extends AbstractPostRepository{
 
   @override
   Future<List<PostModel>> getPostList() async{
-    var response=await dio.get("https://jsonplaceholder.typicode.com/posts");
+    var response=await dio.get(urlEndPoint: "/posts", data: {});
     var d= response.data as List;
     var kkk=d.map((e) => PostModel.fromJson(e)).toList();
     return kkk;
