@@ -8,19 +8,21 @@ import 'package:flutter_clean_arch/domain/use_cases/post_usecase.dart';
 import 'package:get_it/get_it.dart';
 import '../data/remote/data_sources/dio_service.dart';
 import '../presentation/manager/home/home_bloc.dart';
+import 'package:flutter_clean_arch/utils/logger.dart';
 
 final sl = GetIt.instance;
 Future<void> init() async {
   try {
     sl.registerSingleton<DioInterceptor>(DioInterceptor());
-    sl.registerSingleton<DioService>(DioService(dioInterceptor: sl<DioInterceptor>(), dio: Dio()));
+    sl.registerSingleton<Dio>(Dio());
+    sl.registerSingleton<DioService>(DioService(dioInterceptor: sl<DioInterceptor>(), dio: sl<Dio>()));
     sl.registerSingleton<NetworkApiImpl>(NetworkApiImpl(sl<DioService>()));
-    sl.registerSingleton<AbstractNetworkApi>(NetworkApiImpl(sl<DioService>()));
+    sl.registerSingleton<AbstractNetworkApi>(sl<NetworkApiImpl>());
     sl.registerSingleton<PostRepoImpl>(PostRepoImpl(sl<AbstractNetworkApi>()));
     sl.registerSingleton<AbstractPostRepository>(sl<PostRepoImpl>());
     sl.registerSingleton<PostUseCase>(PostUseCase(sl<AbstractPostRepository>()));
     sl.registerSingleton<HomeBloc>(HomeBloc(sl<PostUseCase>()));
   } catch (e) {
-    print('Dependency registration failed: $e');
+    Log.d('Dependency registration failed: $e');
   }
 }

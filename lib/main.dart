@@ -4,7 +4,7 @@ import 'package:flutter_clean_arch/presentation/manager/home/home_bloc.dart';
 import 'package:flutter_clean_arch/presentation/pages/home_page.dart';
 import 'package:flutter_clean_arch/utils/app_bloc_observer.dart';
 import 'package:flutter_clean_arch/utils/my_dependancy.dart';
-
+import 'package:flutter_clean_arch/utils/logger.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await _initApp();
@@ -16,7 +16,7 @@ Future<void> _initApp() async {
     await init();
     Bloc.observer = AppBlocObserver();
   } catch (e) {
-    print('Initialization failed: $e');
+    Log.d('Initialization failed: $e');
   }
 }
 

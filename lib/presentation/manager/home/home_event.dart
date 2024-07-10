@@ -9,7 +9,7 @@ abstract class HomeEvent extends Equatable {
 
 class InitHomeEvent extends HomeEvent {
   final String requestData;
-  InitHomeEvent(this.requestData);
+  const InitHomeEvent(this.requestData);
 
   @override
   List<Object> get props => [requestData];

@@ -12,7 +12,7 @@ class HomeLoadingState extends HomeState {}
 
 class HomeLoadedState extends HomeState {
   final List<PostModel> dataList;
-  HomeLoadedState(this.dataList);
+  const HomeLoadedState(this.dataList);
 
   @override
   List<Object> get props => [dataList];
@@ -20,7 +20,7 @@ class HomeLoadedState extends HomeState {
 
 class HomeErrorState extends HomeState {
   final String message;
-  HomeErrorState(this.message);
+  const HomeErrorState(this.message);
 
   @override
   List<Object> get props => [message];
